@@ -9,7 +9,7 @@
 	};
 	// map tells the System loader where to look for things
 	var map = {
-		'app':                        	'./app', // 'dist',
+		'app':                        	'./build', // './dist', './build' or any other folder
 		'tsconfig.json':				'./tsconfig.json',
 		'typescript': 					'npm:typescript.js',
 		'reflect-metadata':           	'npm:Reflect.js', // npm: means path of directory --> './build/lib/'
@@ -18,9 +18,8 @@
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
-		'app':                        	{ main: 'main.ts',  defaultExtension: 'ts' },
-		'rxjs':                       	{ defaultExtension: 'js' },
-		'reflect-metadata':				{ main: 'Reflect', defaultExtension: 'ts' }
+		'app':                        	{ main: 'main.js',  defaultExtension: 'js' },
+		'rxjs':                       	{ defaultExtension: 'js' }
 	};
 	var ngPackageNames = [
 		'core',

@@ -4,7 +4,8 @@ import { Component, Input } from "@angular/core";
     selector: 'tab',
     template: `
         <div [hidden]="!active">
-            <ng-content></ng-content>
+            <child-selector></child-selector>
+            <ng-content></ng-content>           
         </div>
     `
 })

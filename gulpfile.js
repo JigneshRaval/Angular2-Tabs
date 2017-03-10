@@ -1,23 +1,27 @@
-var gulp = require("gulp");
-var ts  = require("gulp-typescript");
-var tsProject = ts.createProject("tsconfig.json");
+const gulp = require("gulp");
+const del = require('del');
+const ts  = require("gulp-typescript");
+const tsProject = ts.createProject("tsconfig.json");
+
+// clean the contents of the distribution directory
+gulp.task('clean', function () {
+  return del('build/**/*');
+});
 
 /**
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
 gulp.task("compile", () => {
     let tsResult = gulp.src("app/**/*.ts")
-         .pipe(tsProject());
-
-    return tsResult.js
+        .pipe(tsProject())
         .pipe(gulp.dest("build"));
 });
 
 /**
- * Copy all resources that are not TypeScript files into build directory.
+ * Copy all resources like HTML,CSS, JS that are not TypeScript files into build directory.
  */
-gulp.task("resources", () => {
-    return gulp.src(["app/**/*", "!**/*.ts"])
+gulp.task("copy:assets", () => {
+    return gulp.src(["app/**/*", 'index.html', "!**/*.ts"])
         .pipe(gulp.dest("build"));
 });
 
@@ -56,7 +60,7 @@ gulp.task('watch', function () {
     gulp.watch(["app/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
-    gulp.watch(["app/**/*.html", "app/**/*.css"], ['resources']).on('change', function (e) {
+    gulp.watch(["app/**/*.html", "app/**/*.css"], ['copy:assets']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
 });
@@ -65,6 +69,6 @@ gulp.task('watch', function () {
 /**
  * Build the project.
  */
-gulp.task("default", ['compile', 'resources', 'copyTo:libs'], () => {
+gulp.task("default", ['compile', 'copy:assets', 'copyTo:libs'], () => {
     console.log("Building the project ...");
 });
