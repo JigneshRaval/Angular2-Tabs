@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Angular 2 (in Browser)</title>
+		<style>
+			body { font-family: Arial; font-size: 14px; }
+			code { background-color: #EEE; border: 1px solid #CCC; padding: 2px;}
+			pre { background-color: #EEE; border: 1px solid #CCC; padding: 10px; border-radius: 3px; }
+		</style>
+		<link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		<!-- Load Angular 2 and it's Dependency -->
+		<script src="build/lib/shim.min.js"></script>		
+		<script src="build/lib/zone.js"></script>
+		<script src="https://unpkg.com/systemjs@0.19.31/dist/system.js"></script>
+		<script src="systemjs.config.js"></script>
+
+		<script>
+			System
+			.import('app')
+			.catch(console.error.bind(console));
+		</script>
+	</head>
+	<body>
+		<h3>Angular2 using System.js</h3>
+		<p>Create one server.js file for simple Node.js HTTP server, because Angular 2 will not load files directly in browser, it will server files through HTTP server. So for that we have created simple node.js HTTP server</p>
+		<p>Start server using node server.js command in command prompt and in broser open http://localhost:3000/</p>
+		<my-app>
+			<p>Some random HTML with some random content</p>
+		</my-app>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"outDir": "build",
+		"target": "es5",
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"module": "commonjs",
+		"noImplicitAny": false,
+		"removeComments": false,
+		"moduleResolution": "node",
+		"rootDir": "."
+	},
+	"compileOnSave": false,
+	"buildOnSave": false,
+	"exclude": [
+		"node_modules",
+		"typings/main",
+		"typings/main.d.ts" 
+	],
+	"filesGlob": [
+		"app/**/*.ts"
+	],
+	"atom": {
+		"rewriteTsconfig": false
+	}
+}

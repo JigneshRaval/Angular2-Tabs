@@ -1,0 +1,27 @@
+{
+  "name": "ts-express-angular2-node-boilerplate",
+  "version": "1.0.2",
+  "scripts": {
+    "gulp": "gulp default",
+    "gulp:watch": "gulp watch"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.7",
+    "@angular/compiler": "^2.4.7",
+    "@angular/core": "^2.4.7",
+    "@angular/forms": "^2.4.7",
+    "@angular/http": "^2.4.7",
+    "@angular/platform-browser": "^2.4.7",
+    "@angular/platform-browser-dynamic": "^2.4.7",
+    "@angular/router": "^3.4.7",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.9",
+    "rxjs": "^5.1.1",
+    "zone.js": "^0.7.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.5",
+    "typescript": "^2.1.6"
+  }
+}
